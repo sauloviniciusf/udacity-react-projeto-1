@@ -1,0 +1,43 @@
+.app {
+    position: relative;
+    width: 100%;
+    /* display: flex; */
+}
+
+.app-header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* ---------- */
+    padding: 20px 15px;
+    /* ---------- */
+    box-shadow: 10px 0 30px rgba(0,35,75,0.15);
+}
+
+.app-header__title {
+    position: relative;
+    width: auto;
+    display: block;
+    /* ---------- */
+    padding: 0 0 0 60px;
+    /* ---------- */
+    font-size: 32px;
+    color: rgba(0,0,0,0.6);
+}
+
+.app-header__title::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+    /* ---------- */
+    background: url(logo-myreads.svg) center center no-repeat;
+    background-size: 40px 40px;
+    /* ---------- */
+    transform: translateY(-50%)
+}
