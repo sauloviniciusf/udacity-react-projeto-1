@@ -1,0 +1,84 @@
+.list-books {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* ---------- */
+    padding: 50px 15px;
+}
+
+.list-books__container {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    display: block;
+}
+
+.books-shelf {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.books-shelf__header {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.books-shelf__title {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    margin: 0 0 30px;
+    /* ---------- */
+    font-size: 30px;
+    color: rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.books-shelf__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.books-shelf__column {
+    position: relative;
+    width: 25%;
+    display: block;
+    /* ---------- */
+    padding: 0 15px;
+}
+
+.book {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.book__cover {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    text-align: center;
+}
+
+.book__cover img {
+    position: relative;
+    width: auto;
+    height: 200px;
+    display: inline
+}
+
+.book__details {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    text-align: center;
+}
