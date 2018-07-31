@@ -40,6 +40,8 @@ class App extends Component {
     this.setState((state) => ({
       books: state.books.filter((book) => book.id !== bookId).concat(newState)
     }))
+
+    console.log(this.state.books)
   }
 
   searchBooks() {
@@ -65,13 +67,43 @@ class App extends Component {
 
           {/* Route - Books List */}
           <Route exact path="/" render={() => (
-            <ShelfBooks
-              books={this.state.books}
-              shelfs={shelfs}
-              onChangeShelf={(book, shelf) => {
-                this.changeShelf(book, shelf)
-              }}
-            />
+
+            <div className="list-books">
+              <div className="list-books__container">
+
+                {/* TODO: Create shelfs based on shelfs array */}
+                {shelfs.map((shelf, index) => (
+                  <ShelfBooks
+                    key={index}
+                    shelfTitle={shelf.title}
+                    books={this.state.books.filter(books => books.shelf === shelf.slug)}
+                    shelfs={shelfs}
+                    onChangeShelf={(book, shelf) => {
+                      this.changeShelf(book, shelf)
+                    }}
+                  />
+                ))}
+
+                {/* Shelf - Currently Reading */}
+                {/* <ShelfBooks
+                  shelfTitle="Currently Reading"
+                  books={this.state.books.filter(books => books.shelf === 'currentlyReading')}
+                /> */}
+                {/* Shelf - Want to Read */}
+                {/* <ShelfBooks
+                  shelfTitle="Want to Read"
+                  books={this.state.books.filter(books => books.shelf === 'wantToRead')}
+                /> */}
+                {/* Shelf - Read */}
+                {/* <ShelfBooks
+                  shelfTitle="Read"
+                  books={this.state.books.filter(books => books.shelf === 'read')}
+                /> */}
+              </div>
+              
+              <Link className="app-add-book" to="/search"></Link>
+
+            </div>
           )}/>
 
           {/* Route - Books Search */}

@@ -13,7 +13,7 @@
     /* ---------- */
     padding: 20px 15px;
     /* ---------- */
-    box-shadow: 10px 0 30px rgba(0,35,75,0.15);
+    box-shadow: 0 10px 30px rgba(0,35,75,0.15);
 }
 
 .app-header__title {
@@ -36,8 +36,64 @@
     height: 40px;
     display: block;
     /* ---------- */
-    background: url(logo-myreads.svg) center center no-repeat;
+    background: url(images/logo-myreads.svg) center center no-repeat;
     background-size: 40px 40px;
     /* ---------- */
     transform: translateY(-50%)
+}
+
+.app-header__back-button {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    width: 45px;
+    height: 45px;
+    display: block;
+    /* ---------- */
+    background: linear-gradient(130deg, rgba(255,112,186,1) 0%, rgba(178,48,220,1) 100%);
+    /* ---------- */
+    border-radius: 50%;
+    /* ---------- */
+    box-shadow: 0 5px 10px rgba(0,35,75,0.15);
+    /* ---------- */
+    transform: translateY(-50%);
+}
+
+.app-add-book {
+    position: fixed;
+    right: 45px;
+    bottom: 45px;
+    width: 75px;
+    height: 75px;
+    display: block;
+    /* ---------- */
+    background: linear-gradient(130deg, rgba(255,112,186,1) 0%, rgba(178,48,220,1) 100%);
+    /* ---------- */
+    border-radius: 50%;
+    /* ---------- */
+    box-shadow: 0 10px 20px rgba(0,35,75,0.25);
+}
+
+.app-add-book::before, .app-add-book::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    /* ---------- */
+    background: #fff;
+    /* ---------- */
+    border-radius: 2px;
+    /* ---------- */
+    transform: translate(-50%,-50%);
+}
+
+.app-add-book::before {
+    width: 4px;
+    height: 25px;
+}
+
+.app-add-book::after {
+    width: 25px;
+    height: 4px;
 }
