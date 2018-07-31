@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import ListBooks from './ListBooks'
+import ShelfBooks from './ShelfBooks'
 import * as BooksAPI from './BooksAPI'
 import './App.css';
 
@@ -27,17 +27,17 @@ class App extends Component {
         <div className="list-books">
           <div className="list-books__container">
             {/* Shelf - Currently Reading */}
-            <ListBooks
+            <ShelfBooks
               shelfTitle="Currently Reading"
               books={this.state.books.filter(books => books.shelf === 'currentlyReading')}
             />
             {/* Shelf - Want to Read */}
-            <ListBooks
+            <ShelfBooks
               shelfTitle="Want to Read"
               books={this.state.books.filter(books => books.shelf === 'wantToRead')}
             />
             {/* Shelf - Read */}
-            <ListBooks
+            <ShelfBooks
               shelfTitle="Read"
               books={this.state.books.filter(books => books.shelf === 'read')}
             />

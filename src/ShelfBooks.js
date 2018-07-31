@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 // import escapeRegExp from 'escape-string-regexp'
 // import sortBy from 'sort-by'
-import './ListBooks.css';
+import './ShelfBooks.css';
 
-class ListBooks extends Component {
+class ShelfBooks extends Component {
     static propTypes = {
         books: PropTypes.array.isRequired,
         shelfTitle: PropTypes.string.isRequired,
@@ -45,4 +45,4 @@ class ListBooks extends Component {
     }
 }
 
-export default ListBooks
+export default ShelfBooks
