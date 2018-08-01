@@ -32,14 +32,14 @@ class App extends Component {
     })
   }
 
-  changeShelf = (bookId, bookShelf) => {
-    let newState = this.state.books.filter(book => book.id === bookId)
-    // let bookChanged = this.state.books.filter(book => book.id !== bookId)
-    newState[0].shelf = bookShelf 
+  changeShelf = (selectedBook, selectedShelf) => {
+    selectedBook.shelf = selectedShelf
 
     this.setState((state) => ({
-      books: state.books.filter((book) => book.id !== bookId).concat(newState)
+      books: state.books.filter((book) => book.id !== selectedBook.id).concat(selectedBook)
     }))
+
+    console.log(this.state.books)
   }
 
   searchBooks() {
@@ -56,7 +56,7 @@ class App extends Component {
 
           {/* Route for show back button on /search route */}
           <Route path="/search" render={() => (
-            <Link className="app-header__back-button" to="/"> Back </Link>
+            <Link className="app-header__back-button" to="/"></Link>
           )}/>
 
         </div>
@@ -76,7 +76,9 @@ class App extends Component {
 
           {/* Route - Books Search */}
           <Route path="/search" render={() => (
-            <SearchBooks/>
+            <SearchBooks
+              
+            />
           )}/>
         </div>
       </div>

@@ -18,6 +18,11 @@
     position: relative;
     width: 100%;
     display: block;
+    /* ---------- */
+    margin: 0 0 50px;
+    padding: 0 0 50px;
+    /* ---------- */
+    border-bottom: 1px solid rgba(0,0,0,.15)
 }
 
 .books-shelf__header {
@@ -52,6 +57,59 @@
     display: block;
     /* ---------- */
     padding: 0 15px;
+}
+
+.books-shelf__info {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    padding: 50px 30px;
+    /* ---------- */
+    background: rgba(0,0,0,0.075);
+    /* ---------- */
+    font-size: 22px;
+    color: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.books-shelf__loader-container {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    text-align: center
+}
+
+.books-shelf__loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+
+.books-shelf__loader::before {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    /* ---------- */
+    margin: 1px;
+    /* ---------- */
+    border-radius: 50%;
+    border: 5px solid rgba(28, 167, 217, 1.00);
+    border-color: rgba(28, 167, 217, 1.00) transparent rgba(28, 167, 217, 1.00) transparent;
+    /* ---------- */
+    animation: books-shelf-loader 1.2s linear infinite;
+}
+
+@keyframes books-shelf-loader {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
 }
 
 .book {
@@ -118,7 +176,9 @@
     right: 0;
     width: 45px;
     height: 45px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     /* ---------- */
     background: linear-gradient(130deg, rgba(41, 238, 239, 1.00) 0%, rgba(28, 167, 217, 1.00) 100%);
@@ -138,4 +198,16 @@
     height: 100%;
     display: block;
     opacity: 0;
+}
+
+.book__button::before {
+    content: '';
+    position: relative;
+    width: 15px;
+    height: 15px;
+    display: block;
+    /* ---------- */
+    background-image: url(images/arrow-icon-down.svg);
+    background-position: center center;
+    background-size: 15px auto;
 }

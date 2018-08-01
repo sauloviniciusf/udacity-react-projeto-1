@@ -48,7 +48,9 @@
     left: 30px;
     width: 45px;
     height: 45px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* ---------- */
     background: linear-gradient(130deg, rgba(255,112,186,1) 0%, rgba(178,48,220,1) 100%);
     /* ---------- */
@@ -57,6 +59,18 @@
     box-shadow: 0 5px 10px rgba(0,35,75,0.15);
     /* ---------- */
     transform: translateY(-50%);
+}
+
+.app-header__back-button::before {
+    content: '';
+    position: relative;
+    width: 15px;
+    height: 15px;
+    display: block;
+    /* ---------- */
+    background-image: url(images/arrow-icon-left.svg);
+    background-position: center center;
+    background-size: 15px auto;
 }
 
 .app-add-book {
