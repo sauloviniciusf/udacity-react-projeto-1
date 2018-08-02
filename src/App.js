@@ -33,17 +33,19 @@ class App extends Component {
   }
 
   changeShelf = (selectedBook, selectedShelf) => {
-    selectedBook.shelf = selectedShelf
-
-    this.setState((state) => ({
-      books: state.books.filter((book) => book.id !== selectedBook.id).concat(selectedBook)
-    }))
-
-    console.log(this.state.books)
-  }
-
-  searchBooks() {
-    
+    BooksAPI.update(selectedBook,selectedShelf).then((response) => {
+      if (selectedShelf !== 'none'){
+        BooksAPI.get(selectedBook.id).then((selectedBook) => {
+          this.setState((state) => ({
+            books: state.books.filter((book) => book.id !== selectedBook.id).concat(selectedBook)
+          }))
+        })
+      }else{
+        this.setState((state) => ({
+          books: state.books.filter((book) => book.id !== selectedBook.id)
+        }))
+      }
+    })
   }
 
   render() {
@@ -77,7 +79,11 @@ class App extends Component {
           {/* Route - Books Search */}
           <Route path="/search" render={() => (
             <SearchBooks
-              
+              books={this.state.books}
+              shelfs={shelfs}
+              onChangeShelf={(book, shelf) => {
+                this.changeShelf(book, shelf)
+              }}
             />
           )}/>
         </div>

@@ -8,10 +8,11 @@ import './SearchBooks.css';
 import noThumbnail from './images/no-thumbnail.jpg';
 
 class SearchBooks extends Component {
-    // static propTypes = {
-    //     books: PropTypes.array.isRequired,
-    //     // onDeleteContact: PropTypes.func.isRequired
-    // }
+    static propTypes = {
+        books: PropTypes.array.isRequired,
+        shelfs: PropTypes.array.isRequired,
+        onChangeShelf: PropTypes.func.isRequired
+    }
 
     state = {
         query: '',
@@ -31,10 +32,8 @@ class SearchBooks extends Component {
 
     render(){
 
-        // const { books, shelfTitle } = this.props
+        const { books, shelfs, onChangeShelf } = this.props
         const { query, searchedBooks } = this.state
-
-        console.log(this.state)
 
         return(
             <div className="search-books">
@@ -53,10 +52,8 @@ class SearchBooks extends Component {
                             <div className="book">
                                 <div className="book__cover">
                                     <img src={((searchedBook.imageLinks !== undefined) ? searchedBook.imageLinks.smallThumbnail : noThumbnail)} alt={searchedBook.title}/>
-
                                     <label className="book__button">
-                                        <select value={searchedBook.shelf} onChange={(event) => onChangeShelf(searchedBook, event.target.value)}>
-
+                                        <select value={books.filter((book) => book.id === searchedBook.id).reduce((prev, book) => book.shelf, 'none')} onChange={(event) => onChangeShelf(searchedBook, event.target.value)}>
                                             <option value="move" disabled>Move to...</option>
                                             {shelfs.map((shelf,index) => (
                                                 <option 
