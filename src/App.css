@@ -1,7 +1,9 @@
 .app {
     position: relative;
     width: 100%;
-    /* display: flex; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
 }
 
 .app-header {
@@ -71,6 +73,13 @@
     background-image: url(images/arrow-icon-left.svg);
     background-position: center center;
     background-size: 15px auto;
+}
+
+.app-container {
+    position: relative;
+    width: 100%;
+    max-width: 1140px;
+    display: block;
 }
 
 .app-add-book {

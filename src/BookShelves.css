@@ -1,0 +1,115 @@
+.list-books {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* ---------- */
+    padding: 50px 15px;
+}
+
+.list-books__container {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.book-shelf{
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    margin: 0 0 50px;
+    padding: 0;
+    /* ---------- */
+    border-bottom: 1px solid rgba(0,0,0,.15)
+}
+
+.book-shelf__header {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.book-shelf__title {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    margin: 0 0 30px;
+    /* ---------- */
+    font-size: 30px;
+    color: rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+.book-shelf__container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book-shelf__column {
+    position: relative;
+    width: 25%;
+    display: block;
+    /* ---------- */
+    padding: 0 15px;
+}
+
+.book-shelf__info {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    padding: 50px 30px;
+    margin: 0 0 50px;
+    /* ---------- */
+    border-radius: 10px;
+    /* ---------- */
+    background: rgba(0,0,0,0.075);
+    /* ---------- */
+    font-size: 22px;
+    color: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.book-shelf__loader-container {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* ---------- */
+    text-align: center
+}
+
+.book-shelf__loader {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+}
+
+.book-shelf__loader::before {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    /* ---------- */
+    margin: 1px;
+    /* ---------- */
+    border-radius: 50%;
+    border: 5px solid rgba(28, 167, 217, 1.00);
+    border-color: rgba(28, 167, 217, 1.00) transparent rgba(28, 167, 217, 1.00) transparent;
+    /* ---------- */
+    animation: book-shelf-loader 1.2s linear infinite;
+}
+
+@keyframes book-shelf-loader {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
