@@ -28,7 +28,7 @@ Siga o passo a passo abaixo:
 
 Abra o terminal e faça uma cópia do repositório em uma pasta de sua escolha:
 ```
-cd \Pasta de sua escolha\
+cd /Pasta de sua escolha/
 git clone https://sauloviniciusf@bitbucket.org/sauloviniciusf/udacity-react-projeto-1.git
 ```
 
@@ -46,4 +46,4 @@ npm start
 
 ## Autor
 
-* **Saulo Vinícius** - [PurpleBooth](sauloviniciusf@gmail.com)
+* **Saulo Vinícius** - sauloviniciusf@gmail.com
