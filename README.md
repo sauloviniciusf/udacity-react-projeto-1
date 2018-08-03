@@ -29,7 +29,7 @@ Siga o passo a passo abaixo:
 Abra o terminal e faça uma cópia do repositório em uma pasta de sua escolha:
 ```
 cd /Pasta de sua escolha/
-git clone https://sauloviniciusf@bitbucket.org/sauloviniciusf/udacity-react-projeto-1.git
+git clone https://github.com/sauloviniciusf/udacity-react-projeto-1.git
 ```
 
 Após clonado o repositório instale todas as dependências do projeto via Node.js
